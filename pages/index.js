@@ -1,16 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  
   return ( 
     <div className='container mx-auto px-4'> 
       <img className='object-none object-top bg-yellow-300 w-[100vw] h-[40vh]' src="bg.jpg" alt="" /> 
   <section className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-col text-center w-full mb-20">
-      <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">ROOF PARTY POLAROID</h2>
+      <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Find you favourite</h2>
       <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>
       <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
     </div>
@@ -52,9 +54,27 @@ export default function Home() {
         </a>
       </div>
     </div>
-    <button className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Start Shopping</button>
+    <Link href="/products">
+       <button className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Start Shopping</button>
+    </Link>
+    
   </div>
 </section>
     </div>
   )
 }
+
+// export async function getServerSideProps(context) {
+//   try {
+//     let a = await fetch("http://localhost:1337/api/products?populate=*");
+//     let products = await a.json();
+
+//     return {
+//       props: { products }, // Always return data inside props
+//     };
+//   } catch (error) {
+//     return {
+//       props: { error: 'Failed to fetch products' }, // Return error inside props
+//     };
+//   }
+// }

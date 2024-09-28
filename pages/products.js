@@ -41,8 +41,14 @@ const Products = (props) => {
                     style={{ backgroundColor: item.attributes.color }}
                   ></button>
                   <p className="leading-relaxed text-base">
-                    {item.attributes.description}
+                    {item.attributes.description
+                      .split(" ")               
+                      .slice(0, 20)             
+                      .join(" ")                
+                      + (item.attributes.description.split(" ").length > 20 ? "..." : "")}  {/* Add ellipsis if more than 20 words */}
                   </p>
+
+
                   <Link href={`/product/${item.attributes.slug}`}>
                     <button className="my-2 text-white bg-indigo-500 border-0 py-1 md:py-2 px-2 md:px-4 focus:outline-none hover:bg-indigo-600 rounded text-sm">
                       Buy Now
@@ -64,11 +70,11 @@ export async function getServerSideProps(context) {
     let products = await a.json();
 
     return {
-      props: { products }, // Always return data inside props
+      props: { products }, 
     };
   } catch (error) {
     return {
-      props: { error: 'Failed to fetch products' }, // Return error inside props
+      props: { error: 'Failed to fetch products' }, 
     };
   }
 }
