@@ -1,182 +1,104 @@
-import React from 'react'
+// app/about/page.js
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 
 const About = () => {
   return (
+    <div className="container mx-auto px-4 py-12 flex flex-col items-center">
+      {/* Header Section */}
+      <div className="text-center mb-8">
+        <h1 className="text-4xl font-bold">About Us</h1>
+        <p className="text-gray-600 mt-4">Discover who we are and what we stand for.</p>
+      </div>
 
-    <div className='container mx-auto px-4'>
-      <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="text-center mb-20">
-      <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Raw Denim Heirloom Man Braid</h1>
-      <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p>
-    </div>
-    <div class="flex flex-wrap -m-4">
-      <div class="p-4 lg:w-1/4 sm:w-1/2 w-full">
-        <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">SHOOTING STARS</h2>
-        <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>First Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Second Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Third Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Fourth Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Fifth Link
-          </a>
-        </nav>
-      </div>
-      <div class="p-4 lg:w-1/4 sm:w-1/2 w-full">
-        <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">THE 400 BLOWS</h2>
-        <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>First Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Second Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Third Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Fourth Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Fifth Link
-          </a>
-        </nav>
-      </div>
-      <div class="p-4 lg:w-1/4 sm:w-1/2 w-full">
-        <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">THE CATALYZER</h2>
-        <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>First Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Second Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Third Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Fourth Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Fifth Link
-          </a>
-        </nav>
-      </div>
-      <div class="p-4 lg:w-1/4 sm:w-1/2 w-full">
-        <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">NEPTUNE</h2>
-        <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>First: Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Second Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Third Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Fourth: Link
-          </a>
-          <a>
-            <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" class="w-3 h-3" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-            </span>Fifth Link
-          </a>
-        </nav>
-      </div>
-    </div>
-    <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-  </div>
-</section>
-    </div>
-  )
-}
+      {/* Our Story Section */}
+      <section className="mb-12 w-full md:w-3/4 lg:w-2/3 text-left">
+        <h2 className="text-3xl font-semibold mb-4">Our Story</h2>
+        <p className="text-lg text-gray-700 leading-relaxed">
+          At <strong>My Shop</strong>, we believe fashion is more than just clothes – it’s a way to express yourself. Since our founding in 2023, we’ve grown from a small local boutique to a global online destination for style enthusiasts.
+          <br /><br />
+          From humble beginnings, our journey has been fueled by our passion for delivering high-quality, affordable, and sustainable fashion to all. Each collection we release is carefully curated to bring the latest trends directly to you.
+        </p>
+      </section>
 
-export default About
+      {/* Mission Section */}
+      <section className="mb-12 w-full md:w-3/4 lg:w-2/3 text-left">
+        <h2 className="text-3xl font-semibold mb-4">Our Mission</h2>
+        <p className="text-lg text-gray-700 leading-relaxed">
+          We’re committed to offering stylish, sustainable clothing for everyone. Our goal is to make fashion accessible, empowering individuals through pieces that not only look good but also feel good. We strive to minimize our environmental impact by focusing on eco-friendly materials and ethical production methods.
+        </p>
+      </section>
+
+      {/* Meet the Team Section */}
+      <section className="mb-12 w-full md:w-3/4 lg:w-2/3">
+        <h2 className="text-3xl font-semibold mb-4 text-center">Meet the Team</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Example Team Member 1 */}
+          <div className="flex items-center">
+            <img
+              src="WhatsApp Image 2024-09-08 at 12.15.10 PM.jpeg"
+              alt="Team Member 1"
+              className="w-24 h-24 rounded-full mr-6"
+            />
+            <div>
+              <h3 className="text-2xl font-bold">Vishal Kumar</h3>
+              <p className="text-gray-600">Lead Developer</p>
+              {/* LinkedIn Icon and Link */}
+              <a
+                href="https://www.linkedin.com/in/vishal-kumar-0233a7223/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-blue-600 mt-2 hover:text-blue-800"
+              >
+                <FontAwesomeIcon icon={faLinkedin} className="mr-2" />
+                Connect on LinkedIn
+              </a>
+            </div>
+          </div>
+
+          {/* Example Team Member 2 */}
+          <div className="flex items-center">
+            <img
+              src="pexels-pixabay-45201.jpg"
+              alt="Team Member 2"
+              className="w-24 h-24 rounded-full mr-6"
+            />
+            <div>
+              <h3 className="text-2xl font-bold">Ashmita Singh</h3>
+              <p className="text-gray-600">Head of Design</p>
+              {/* LinkedIn Icon and Link */}
+              <a
+                href="https://www.linkedin.com/in/janesmith"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-blue-600 mt-2 hover:text-blue-800"
+              >
+                <FontAwesomeIcon icon={faLinkedin} className="mr-2" />
+                Connect on LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Call to Action Section */}
+      <section className="text-center">
+        <h2 className="text-3xl font-semibold mb-4">Join Us on the Journey</h2>
+        <p className="text-lg text-gray-700 leading-relaxed mb-8">
+          Explore our latest collections, follow us on social media, and become a part of our ever-growing community. We can’t wait to see you in <strong>My Shop</strong> apparel!
+        </p>
+        <a
+          href="/products"
+          className="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-blue-500 transition duration-300"
+        >
+          Explore Our Collection
+        </a>
+      </section>
+    </div>
+  );
+};
+
+export default About;
