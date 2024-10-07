@@ -14,10 +14,12 @@ const Slug = ({ product, addToCart }) => {
             <div className="flex justify-center items-center w-full lg:w-auto">
               <img
                 alt="ecommerce"
-                className="rounded"
+                className="rounded w-auto h-auto max-w-full max-h-full"
+                style={{ objectFit: "contain" }} // Ensures the image is contained within the box without stretching
                 src={`http://localhost:1337${product.attributes.image.data.attributes.url}`}
               />
             </div>
+
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <h2 className="text-sm title-font text-gray-500 tracking-widest">
                 {product.attributes.category}
@@ -161,7 +163,7 @@ const Slug = ({ product, addToCart }) => {
               </div>
               <div className="flex">
                 <span className="title-font font-medium text-2xl text-gray-900">
-                  ₹{product.attributes.price}
+                  ${product.attributes.price}
                 </span>
                 <div className="flex mx-2">
                   <button

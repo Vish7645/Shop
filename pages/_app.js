@@ -23,12 +23,15 @@ function MyApp({ Component, pageProps }) {
     setReloadKey(Math.random())
   }
 
-  const removeFromCart = (item, qty) => {
-    let newCart = cart
-    let index = newCart.indexOf(item)
-    newCart.splice(index)
-    setCart(newCart)
-  }
+  const removeFromCart = (item) => {
+    let newCart = [...cart];  
+    let index = newCart.indexOf(item);
+    if (index !== -1) {
+      newCart.splice(index, 1); // Remove one item at the found index
+    }
+    setCart(newCart); 
+  };
+  
 
   const clearCart = (item) => {
     setCart([])
