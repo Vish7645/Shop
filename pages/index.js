@@ -1,80 +1,99 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
-import styles from '../styles/Home.module.css'
+export default function Home({ products }) {
+  const [shopText, setShopText] = useState('');
+  const fullText = 'My Shop';
+  const [index, setIndex] = useState(0);
 
-export default function Home() {
-  
-  return ( 
-    <div className='container mx-auto px-4'> 
-      <img className='object-none object-top bg-yellow-300 w-[100vw] h-[40vh]' src="bg.jpg" alt="" /> 
-  <section className="text-gray-600 body-font">
-  <div className="container px-5 py-24 mx-auto">
-    <div className="flex flex-col text-center w-full mb-20">
-      <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Find you favourite</h2>
-      <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>
-      <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
+  useEffect(() => {
+    const interval = setTimeout(() => {
+      setShopText(fullText.slice(0, index));
+      setIndex((prevIndex) => (prevIndex < fullText.length ? prevIndex + 1 : 0)); 
+    }, 150);
+
+    return () => clearTimeout(interval);
+  }, [index]);
+
+  const [staticProducts, setStaticProducts] = useState([]);
+
+  const getRandomProducts = (products) => {
+    const shuffled = [...products].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 8); 
+  };
+
+  useEffect(() => {
+    setStaticProducts(getRandomProducts(products.data));
+  }, [products]);
+
+  return (
+    <div className='container mx-auto px-4'>
+      <div className="relative">
+        <img
+          className='object-cover object-top bg-yellow-300 w-full h-[60vh]' 
+          src="bg.jpg"
+          alt="Background"
+        />
+        <div className="absolute inset-0 flex justify-end items-center pr-12">
+          <div className="text-right">
+            <div className="h-12">
+              <h1 className="text-6xl font-bold text-sky-500">{shopText || '\u00A0'}</h1> 
+            </div>
+            <p className="text-2xl text-white mt-2">Let's find your favourite</p> 
+          </div>
+        </div>
+      </div>
+      
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-col text-center w-full mb-20">
+            <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">
+              Most Buy Products
+            </h2>
+            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+              Explore our Bestsellers
+            </h1>
+          </div>
+          <div className="flex flex-wrap -m-4">
+            {staticProducts.map((product, index) => (
+              <div key={index} className="lg:w-1/4 md:w-1/2 p-4 w-full">
+                <div className="block relative h-48 rounded overflow-hidden">
+                  <img 
+                    alt={product.attributes.title} 
+                    className="object-cover object-center w-full h-full block" 
+                    src={`http://localhost:1337${product.attributes.image.data.attributes.url}`} // Dynamic image from API
+                  />
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{product.attributes.category}</h3>
+                  <h2 className="text-gray-900 title-font text-lg font-medium">{product.attributes.title}</h2>
+                  <p className="mt-1">${product.attributes.price}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <Link href="/products">
+            <button className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+              Start Shopping
+            </button>
+          </Link>
+        </div>
+      </section>
     </div>
-    <div className="flex flex-wrap">
-      <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
-        <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-        <p className="leading-relaxed text-base mb-4">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-        <a className="text-indigo-500 inline-flex items-center">Learn More
-          <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-      <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
-        <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">The Catalyzer</h2>
-        <p className="leading-relaxed text-base mb-4">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-        <a className="text-indigo-500 inline-flex items-center">Learn More
-          <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-      <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
-        <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Neptune</h2>
-        <p className="leading-relaxed text-base mb-4">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-        <a className="text-indigo-500 inline-flex items-center">Learn More
-          <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-      <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
-        <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Melanchole</h2>
-        <p className="leading-relaxed text-base mb-4">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-        <a className="text-indigo-500 inline-flex items-center">Learn More
-          <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-    <Link href="/products">
-       <button className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Start Shopping</button>
-    </Link>
-    
-  </div>
-</section>
-    </div>
-  )
+  );
 }
 
-// export async function getServerSideProps(context) {
-//   try {
-//     let a = await fetch("http://localhost:1337/api/products?populate=*");
-//     let products = await a.json();
+export async function getServerSideProps(context) {
+  try {
+    let a = await fetch("http://localhost:1337/api/products?populate=*");
+    let products = await a.json();
 
-//     return {
-//       props: { products }, // Always return data inside props
-//     };
-//   } catch (error) {
-//     return {
-//       props: { error: 'Failed to fetch products' }, // Return error inside props
-//     };
-//   }
-// }
+    return {
+      props: { products }, 
+    };
+  } catch (error) {
+    return {
+      props: { error: 'Failed to fetch products' }, 
+    };
+  }
+}
